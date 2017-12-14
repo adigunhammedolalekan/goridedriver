@@ -1,0 +1,14 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="?android:colorControlHighlight"
+    tools:targetApi="lollipop"
+    >
+
+    <item>
+
+        <shape android:shape="oval">
+
+            <solid android:color="@color/red" />
+        </shape>
+    </item>
+</selector>

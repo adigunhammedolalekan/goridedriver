@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GoRide Driver</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">History</string>
+    <string name="title_notifications">Payments</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCfwOQL_D_Tn_izA3XTilHRKL4g_V0aOV8</string>
+
+</resources>

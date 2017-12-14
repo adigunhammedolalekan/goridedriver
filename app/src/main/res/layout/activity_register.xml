@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_background"
+    tools:context="Register.Register">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10sp"
+                android:visibility="visible"
+                android:id="@+id/main_layout_register_user"
+                android:layout_marginTop="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Enter your basic info to get started"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_full_name_register"
+                            android:hint="First Name" />
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_last_name_register"
+                            android:hint="Last Name" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_phone_register"
+                            android:inputType="phone|number"
+                            android:layout_height="wrap_content"
+                            android:hint="Mobile No." />
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="4dp"
+                            android:inputType="textEmailAddress"
+                            android:id="@+id/edt_email_address_register"
+                            android:layout_height="wrap_content"
+                            android:hint="Email Address" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal">
+
+
+                        <Spinner
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:id="@+id/statesSpinner"
+                            android:layout_height="43dp"
+                            android:layout_marginTop="7dp"
+                            android:foregroundTint="@color/colorPrimary"
+                            android:backgroundTint="@color/colorPrimary" />
+
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="4dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/edt_car_model_register"
+                            android:hint="Car Model" />
+
+                    </LinearLayout>
+
+                    <EditText
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:id="@+id/edt_lpn_register"
+                        android:hint="Licence Plate Number" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:inputType="textPassword"
+                            android:textSize="11sp"
+                            android:id="@+id/edt_password_register"
+                            android:layout_height="wrap_content"
+                            android:hint="Password" />
+
+                        <EditText
+                            style="@style/EditText"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="4dp"
+                            android:textSize="11sp"
+                            android:id="@+id/edt_confirm_password_register"
+                            android:inputType="textPassword"
+                            android:layout_height="wrap_content"
+                            android:hint="Confirm Password" />
+
+                    </LinearLayout>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:id="@+id/aboutGoRideSpinner"
+                        android:layout_height="43dp"
+                        android:layout_marginTop="7dp"
+                        android:foregroundTint="@color/colorPrimary"
+                        android:backgroundTint="@color/colorPrimary" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/sky_blue"
+                        android:text="I agree to the terms and conditions" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/round_btn_blue"
+                        android:text="SIGN UP NOW"
+                        android:id="@+id/btn_sign_up_register"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/otp_layout_register_driver"
+                android:visibility="gone"
+                android:layout_marginTop="16sp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="Enter Code"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:paddingStart="16dp"
+                        android:paddingBottom="16dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="Enter the code that was sent to your phone 09077443322"/>
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:minEms="10"
+                        android:layout_marginBottom="10dp"
+                        style="@style/EditText"
+                        android:hint="Code"
+                        android:gravity="center_horizontal|center"
+                        android:id="@+id/edt_code_register"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_btn_blue"
+                        android:text="SUBMIT"
+                        android:id="@+id/btn_submit_otp_register"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center"
+                        android:text="Didn't recieve code?"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="RESEND CODE"
+                        android:textStyle="bold"
+                        android:id="@+id/btn_resend_code"
+                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="16sp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+  <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="© GoRide 2017"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        /> -->
+</RelativeLayout>
