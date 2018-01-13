@@ -17,6 +17,7 @@ import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.MenuItem;
@@ -115,6 +116,8 @@ public class HomePage extends BaseActivity
     TextView percengerPickupLocationTextView;
     @BindView(R.id.count_down_timer)
     TextView timerTextView;
+    @BindView(R.id.card_activity_info_homepage)
+    CardView mActivityInfoCardView;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -124,23 +127,25 @@ public class HomePage extends BaseActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    mActivityInfoCardView.setVisibility(View.VISIBLE);
                     sMapFragment = SupportMapFragment.newInstance();
-                    setContentView(R.layout.activity_home_page);
                     // Obtain the SupportMapFragment and get notified when the map is ready to be used.
                     if (!sMapFragment.isAdded())
-                        sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
+                        sFm.beginTransaction().replace(R.id.map, sMapFragment).commit();
                     else
                         sFm.beginTransaction().show(sMapFragment).commit();
 
                     return true;
                 case R.id.navigation_history:
 
-                    fm = getFragmentManager();
-                    fm.beginTransaction().replace(R.id.content_frame, new FragmentHistory()).commit();
+                    mActivityInfoCardView.setVisibility(View.GONE);
+                    sFm.beginTransaction().add(R.id.map, new FragmentHistory()).commit();
                     return true;
                 case R.id.navigation_payments:
+                    mActivityInfoCardView.setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_notifications:
+                    mActivityInfoCardView.setVisibility(View.GONE);
 
                     return true;
             }
@@ -162,9 +167,6 @@ public class HomePage extends BaseActivity
             sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
         else
             sFm.beginTransaction().show(sMapFragment).commit();
-
-        FragmentManager fm = getFragmentManager();
-        fm.beginTransaction().replace(R.id.content, new FragmentHome()).commit();
 
         sMapFragment.getMapAsync(this);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -198,6 +200,7 @@ public class HomePage extends BaseActivity
 
     private void promptNewRide(Ride toPrompt) {
 
+        L.fine("Prompting new ride...");
         timerTextView.setText(String.valueOf(mCounter));
         mCounter = 10;
         percengerDestinationTextView.setText(toPrompt.getDestinationAddress());
@@ -226,15 +229,19 @@ public class HomePage extends BaseActivity
     }
 
     @OnClick(R.id.btn_reject_ride) public void onRejectRide() {
-
+        rejectRide();
     }
+
     private void rejectRide() {
         changeStatus("rejected");
         mBookingRequestLayout.setVisibility(View.GONE);
         handler.removeCallbacksAndMessages(null);
+
+        toast("Ride Rejected!");
     }
     private void acceptRide() {
 
+        mBookingRequestLayout.setVisibility(View.GONE);
         handler.removeCallbacksAndMessages(null);
         changeStatus("accepted");
         Intent intent = new Intent(this, BookingAccepted.class);
@@ -449,10 +456,17 @@ public class HomePage extends BaseActivity
     }
     private void initLocation() {
 
-        if (mCurrentLocation == null)
+        L.fine("Initing location");
+        if (mCurrentLocation == null || mMap == null)
             return;
 
+        L.fine("Location ==> " + mCurrentLocation.toString());
         driverLatLng = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
+        if (mCurrentLocationMarker != null)
+            mCurrentLocationMarker.remove();
+
+        mCurrentLocationMarker = mMap.addMarker(new MarkerOptions().position(driverLatLng));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(driverLatLng, 14f));
 
         if(customerID == null || customerID.isEmpty()) {
             setDriverAvailability();
@@ -538,9 +552,9 @@ public class HomePage extends BaseActivity
     protected void onResume() {
         super.onResume();
 
-        startLocationUpdates();
-        if (mCurrentLocation != null && goOnlineSwitchCompat.isChecked()) {
+        if (mCurrentLocation != null && goOnlineSwitchCompat.isChecked() && mGoogleApiClient.isConnected()) {
             beOnline();
+            startLocationUpdates();
         }
     }
 

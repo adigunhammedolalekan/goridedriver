@@ -15,6 +15,7 @@ public class Driver {
     private String phoneNumber = "";
     private String driverState = "";
     private String aboutGoRide = "";
+    private String photoURI = "";
 
     public Driver(String email, String firstName,
                   String lastName, String carModel,
@@ -28,6 +29,14 @@ public class Driver {
         this.driverState = state;
         this.aboutGoRide = about;
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhotoURI() {
+        return photoURI;
+    }
+
+    public void setPhotoURI(String photoURI) {
+        this.photoURI = photoURI;
     }
 
     public Driver() {}

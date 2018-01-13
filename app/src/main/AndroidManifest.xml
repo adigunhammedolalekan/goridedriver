@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -42,7 +43,8 @@
         <activity
             android:name=".FirstPage"
             android:label="" />
-        <activity android:name=".BookingAccepted.BookingAccepted" />
+        <activity android:name=".BookingAccepted.BookingAccepted"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".BookingRequest.BookingRequest" />
         <activity android:name=".History.History" />
         <activity
@@ -55,7 +57,8 @@
             android:value=".FirstPage" />
 
         <activity android:name=".Register.RegisterationComplete" />
-        <activity android:name=".MyProfile"></activity>
+        <activity android:name=".MyProfile"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

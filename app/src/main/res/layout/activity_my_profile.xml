@@ -33,9 +33,7 @@
                     android:layout_gravity="center"
                     android:text="My Profile"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-
-                    />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -76,6 +74,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Edit"
+                    android:id="@+id/tv_edit_drivers_profile"
                     android:textColor="@color/colorPrimary"
                     android:textSize="15sp" />
 
@@ -105,9 +104,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="5.0/5.0"
-
-                                />
+                                android:text="5.0/5.0" />
 
                             <ImageView
                                 android:layout_width="10dp"
@@ -134,6 +131,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:editable="false"
+                        android:id="@+id/edt_driver_name_profile"
                         android:text="Muhammad Hussaini" />
 
 
@@ -149,6 +147,7 @@
                             android:layout_weight="1"
                             android:editable="false"
                             android:singleLine="true"
+                            android:id="@+id/edt_drivers_phone_profile"
                             android:text="08036473626" />
 
                         <EditText
@@ -158,6 +157,7 @@
                             android:layout_weight="1"
                             android:editable="false"
                             android:singleLine="true"
+                            android:id="@+id/edt_drivers_email_profile"
                             android:text="hussainee97@gmail.com" />
 
 
@@ -171,6 +171,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp"
                         android:editable="false"
+                        android:id="@+id/edt_drivers_state_profile"
                         android:text="KWARA STATE" />
 
                     <LinearLayout
@@ -188,6 +189,7 @@
                             android:layout_weight="1"
                             android:editable="false"
                             android:singleLine="true"
+                            android:id="@+id/edt_drivers_car_name_profile"
                             android:text="TOYOTA CAMERY" />
 
 
@@ -200,6 +202,7 @@
                             android:layout_weight="1"
                             android:editable="false"
                             android:singleLine="true"
+                            android:id="@+id/edt_drivers_plate_number_profile"
                             android:text="AT 175 BWR" />
 
                     </LinearLayout>
@@ -210,6 +213,7 @@
                         android:layout_marginTop="12dp"
                         android:background="@drawable/round_btn_blue"
                         android:text="SAVE"
+                        android:id="@+id/btn_save_drivers_info_profile"
                         android:textColor="@color/white" />
 
                     <Button
@@ -218,8 +222,7 @@
                         android:layout_marginTop="12dp"
                         android:background="@color/white"
                         android:text="MY BANK ACCOUNT INFO"
-                        android:onClick="bankAccountInfo"
-                         />
+                        android:onClick="bankAccountInfo" />
 
 
                 </LinearLayout>
@@ -242,8 +245,8 @@
     </LinearLayout>
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_driver_profile"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="10dp"

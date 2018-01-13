@@ -19,6 +19,9 @@ public class Ride {
     private String destinationAddress = "";
     private String pickupAddress = "";
     private String status = "";
+    private long date = System.currentTimeMillis();
+
+    public Ride() {}
 
     public Ride(String driverID, String customerID, double pickupLat, double pickupLon,
                 double destinationLat, double destinationLon,
@@ -32,6 +35,10 @@ public class Ride {
         this.destinationAddress = destinationAddress;
         this.pickupAddress = pickupAddress;
         this.status = status;
+    }
+
+    public long getDate() {
+        return date;
     }
 
     public String getStatus() {

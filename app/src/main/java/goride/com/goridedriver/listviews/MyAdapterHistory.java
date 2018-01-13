@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import goride.com.goridedriver.R;
+import goride.com.goridedriver.entities.Ride;
 
 
 /**
@@ -19,10 +20,10 @@ import goride.com.goridedriver.R;
 
 public class MyAdapterHistory extends RecyclerView.Adapter<MyAdapterHistory.MyViewHolder>{
 
-    private List<RecyclerViewHistory> objectList;
+    private List<Ride> objectList;
     private LayoutInflater inflater;
 
-    public MyAdapterHistory(Context context, List<RecyclerViewHistory> objectList){
+    public MyAdapterHistory(Context context, List<Ride> objectList){
 
         inflater = LayoutInflater.from(context);
         this.objectList = objectList;
@@ -40,7 +41,7 @@ public class MyAdapterHistory extends RecyclerView.Adapter<MyAdapterHistory.MyVi
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        RecyclerViewHistory current = objectList.get(position);
+        Ride current = objectList.get(position);
         holder.setData(current, position);
 
     }
@@ -59,7 +60,7 @@ public class MyAdapterHistory extends RecyclerView.Adapter<MyAdapterHistory.MyVi
         private TextView trip_from;
         private TextView trip_to;
 
-        private RecyclerViewHistory currentObject;
+        private Ride currentObject;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -70,13 +71,13 @@ public class MyAdapterHistory extends RecyclerView.Adapter<MyAdapterHistory.MyVi
            trip_to = (TextView) itemView.findViewById(R.id.trip_to);
         }
 
-        public void setData(RecyclerViewHistory currentObject, int position) {
+        public void setData(Ride currentObject, int position) {
 
            // this.imageItem.setImageResource(currentObject.getItemImage());
-            this.trip_price.setText(currentObject.gettripPrice());
-            this.trip_date.setText(currentObject.gettripDate());
-            this.trip_from.setText(currentObject.getTripFrom());
-            this.trip_to.setText(currentObject.getTripTo());
+            //this.trip_price.setText(currentObject.get());
+            this.trip_date.setText(String.valueOf(currentObject.getDate()));
+            this.trip_from.setText(currentObject.getPickupAddress());
+            this.trip_to.setText(currentObject.getDestinationAddress());
             this.position = position;
             this.currentObject = currentObject;
 

@@ -12,6 +12,7 @@ import goride.com.goridedriver.FirstPage;
 import goride.com.goridedriver.HomePage.HomePage;
 import goride.com.goridedriver.R;
 import goride.com.goridedriver.base.BaseActivity;
+import goride.com.goridedriver.util.L;
 
 /**
  * Created by Lekan Adigun on 12/13/2017.
@@ -43,6 +44,7 @@ public class Splash extends BaseActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         if(user != null) {
+            L.fine("F User ==> " + user.getUid());
             launch(HomePage.class);
         }else {
             launch(FirstPage.class);

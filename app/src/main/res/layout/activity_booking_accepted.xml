@@ -54,7 +54,7 @@
             <FrameLayout
                 android:id="@+id/map"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></FrameLayout>
+                android:layout_height="match_parent"/>
 
 
             <LinearLayout
@@ -239,6 +239,7 @@
                                     android:layout_width="40dp"
                                     android:layout_weight="1"
                                     android:layout_height="40dp"
+                                    android:id="@+id/btn_call_passenger"
                                     android:background="@drawable/cat6"
                                     android:src="@android:drawable/sym_call_outgoing" />
 
@@ -248,6 +249,7 @@
                                     android:layout_weight="1"
                                     android:layout_height="40dp"
                                     android:layout_marginLeft="3dp"
+                                    android:id="@+id/btn_sms_passenger"
                                     android:background="@drawable/cat1"
                                     android:src="@android:drawable/sym_action_chat" />
 
@@ -306,6 +308,7 @@
                 android:orientation="vertical"
                 android:layout_alignParentBottom="true"
                 android:padding="16dp"
+                android:visibility="visible"
                 android:id="@+id/loading_layout_booking_accept"
                 android:background="@color/white">
                 <com.pnikosis.materialishprogress.ProgressWheel

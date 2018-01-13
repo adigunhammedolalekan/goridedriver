@@ -72,6 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="₦1,200.00"
+                    android:id="@+id/tv_trip_fare_end_trip_dialog"
                     android:textColor="@color/dark_green"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -112,6 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="₦600.00"
+                    android:id="@+id/tv_promotion_end_trip_dialog"
                     android:textColor="@color/dark_green"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -152,6 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="₦0.00"
+                    android:id="@+id/tv_other_fee_end_trip_dialog"
                     android:textColor="@color/dark_green"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -204,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="₦600.00"
+                android:id="@+id/tv_total_fee_end_trip_dialog"
                 android:textColor="@color/dark_green"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -223,6 +227,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_btn_dark_green"
                 android:text="CONFIRM"
+                android:id="@+id/btn_confirm_end_trip"
                 android:textColor="@color/white"
 
                 />
@@ -233,9 +238,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:text="CANCEL"
-
-
-                />
+                android:id="@+id/btn_cancel_end_trip"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -244,8 +247,7 @@
                 android:gravity="center"
                 android:textColor="@color/red"
                 android:layout_marginTop="20dp"
-                android:text="Note: Only click the 'Confirm' button after your passenger has sucessfully made payment."
-                 />
+                android:text="Note: Only click the 'Confirm' button after your passenger has sucessfully made payment." />
 
 
         </LinearLayout>
